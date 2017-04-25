@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JvSpeechRecognizerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BnJ-bZ-xxd">
+                                <rect key="frame" x="16" y="64" width="343" height="333.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lt2-Ne-MFl">
+                                <rect key="frame" x="136" y="417.5" width="102" height="30"/>
+                                <state key="normal" title="Start Speaking">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnStartSpeakingPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="day-os-OLj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vio-eR-faM">
+                                <rect key="frame" x="137" y="455.5" width="100" height="30"/>
+                                <state key="normal" title="Stop Speaking">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnStopSpeakingPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="DKY-zy-LaB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0D-Sm-yzM">
+                                <rect key="frame" x="120.5" y="493.5" width="133" height="30"/>
+                                <state key="normal" title="Cancel Recognition">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnCancelRecognitionPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="PFX-i4-3tG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BnJ-bZ-xxd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="1mn-Iy-itd"/>
+                            <constraint firstItem="BnJ-bZ-xxd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="3VW-tY-k5l"/>
+                            <constraint firstItem="Vio-eR-faM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7mQ-pe-yuR"/>
+                            <constraint firstItem="W0D-Sm-yzM" firstAttribute="top" secondItem="Vio-eR-faM" secondAttribute="bottom" constant="8" id="D1I-W9-jmh"/>
+                            <constraint firstItem="Vio-eR-faM" firstAttribute="top" secondItem="Lt2-Ne-MFl" secondAttribute="bottom" constant="8" id="PCC-2d-YWD"/>
+                            <constraint firstItem="Lt2-Ne-MFl" firstAttribute="top" secondItem="BnJ-bZ-xxd" secondAttribute="bottom" constant="20" id="RKZ-qM-1pH"/>
+                            <constraint firstItem="Lt2-Ne-MFl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="USl-c9-8SS"/>
+                            <constraint firstItem="BnJ-bZ-xxd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="aQ1-JX-vzd"/>
+                            <constraint firstItem="BnJ-bZ-xxd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="eRG-tu-eIQ"/>
+                            <constraint firstItem="W0D-Sm-yzM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eZP-5D-mDe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnCancelRecognition" destination="W0D-Sm-yzM" id="NMj-hD-nSV"/>
+                        <outlet property="btnStartSpeaking" destination="Lt2-Ne-MFl" id="v7m-Dc-XTu"/>
+                        <outlet property="btnStopSpeaking" destination="Vio-eR-faM" id="mDs-ce-mYc"/>
+                        <outlet property="resultTextView" destination="BnJ-bZ-xxd" id="LH9-bV-aEC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+</document>

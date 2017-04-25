@@ -1,0 +1,327 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		980489A81EA7A5D900FF4A39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980489A71EA7A5D900FF4A39 /* AppDelegate.swift */; };
+		980489AA1EA7A5D900FF4A39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980489A91EA7A5D900FF4A39 /* ViewController.swift */; };
+		980489AD1EA7A5D900FF4A39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 980489AB1EA7A5D900FF4A39 /* Main.storyboard */; };
+		980489AF1EA7A5D900FF4A39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 980489AE1EA7A5D900FF4A39 /* Assets.xcassets */; };
+		980489B21EA7A5D900FF4A39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 980489B01EA7A5D900FF4A39 /* LaunchScreen.storyboard */; };
+		980489BD1EA847FA00FF4A39 /* JvSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980489BC1EA847FA00FF4A39 /* JvSpeechRecognizer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		980489A41EA7A5D800FF4A39 /* JvSpeechRecognizerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JvSpeechRecognizerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		980489A71EA7A5D900FF4A39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		980489A91EA7A5D900FF4A39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		980489AC1EA7A5D900FF4A39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		980489AE1EA7A5D900FF4A39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		980489B11EA7A5D900FF4A39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		980489B31EA7A5D900FF4A39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		980489BC1EA847FA00FF4A39 /* JvSpeechRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JvSpeechRecognizer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		980489A11EA7A5D800FF4A39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9804899B1EA7A5D800FF4A39 = {
+			isa = PBXGroup;
+			children = (
+				980489BB1EA8475200FF4A39 /* JvSpeechRecognizer */,
+				980489A61EA7A5D800FF4A39 /* JvSpeechRecognizerDemo */,
+				980489A51EA7A5D800FF4A39 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		980489A51EA7A5D800FF4A39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				980489A41EA7A5D800FF4A39 /* JvSpeechRecognizerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		980489A61EA7A5D800FF4A39 /* JvSpeechRecognizerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				980489A71EA7A5D900FF4A39 /* AppDelegate.swift */,
+				980489A91EA7A5D900FF4A39 /* ViewController.swift */,
+				980489AB1EA7A5D900FF4A39 /* Main.storyboard */,
+				980489AE1EA7A5D900FF4A39 /* Assets.xcassets */,
+				980489B01EA7A5D900FF4A39 /* LaunchScreen.storyboard */,
+				980489B31EA7A5D900FF4A39 /* Info.plist */,
+			);
+			path = JvSpeechRecognizerDemo;
+			sourceTree = "<group>";
+		};
+		980489BB1EA8475200FF4A39 /* JvSpeechRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				980489BC1EA847FA00FF4A39 /* JvSpeechRecognizer.swift */,
+			);
+			name = JvSpeechRecognizer;
+			path = ../JvSpeechRecognizer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		980489A31EA7A5D800FF4A39 /* JvSpeechRecognizerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 980489B61EA7A5D900FF4A39 /* Build configuration list for PBXNativeTarget "JvSpeechRecognizerDemo" */;
+			buildPhases = (
+				980489A01EA7A5D800FF4A39 /* Sources */,
+				980489A11EA7A5D800FF4A39 /* Frameworks */,
+				980489A21EA7A5D800FF4A39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JvSpeechRecognizerDemo;
+			productName = JvSpeechRecognizerDemo;
+			productReference = 980489A41EA7A5D800FF4A39 /* JvSpeechRecognizerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9804899C1EA7A5D800FF4A39 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Jovistudio;
+				TargetAttributes = {
+					980489A31EA7A5D800FF4A39 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = V53NK9K5L7;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9804899F1EA7A5D800FF4A39 /* Build configuration list for PBXProject "JvSpeechRecognizerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9804899B1EA7A5D800FF4A39;
+			productRefGroup = 980489A51EA7A5D800FF4A39 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				980489A31EA7A5D800FF4A39 /* JvSpeechRecognizerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		980489A21EA7A5D800FF4A39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				980489B21EA7A5D900FF4A39 /* LaunchScreen.storyboard in Resources */,
+				980489AF1EA7A5D900FF4A39 /* Assets.xcassets in Resources */,
+				980489AD1EA7A5D900FF4A39 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		980489A01EA7A5D800FF4A39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				980489BD1EA847FA00FF4A39 /* JvSpeechRecognizer.swift in Sources */,
+				980489AA1EA7A5D900FF4A39 /* ViewController.swift in Sources */,
+				980489A81EA7A5D900FF4A39 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		980489AB1EA7A5D900FF4A39 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				980489AC1EA7A5D900FF4A39 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		980489B01EA7A5D900FF4A39 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				980489B11EA7A5D900FF4A39 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		980489B41EA7A5D900FF4A39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		980489B51EA7A5D900FF4A39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		980489B71EA7A5D900FF4A39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V53NK9K5L7;
+				INFOPLIST_FILE = JvSpeechRecognizerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.Jovistudio.JvSpeechRecognizerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		980489B81EA7A5D900FF4A39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V53NK9K5L7;
+				INFOPLIST_FILE = JvSpeechRecognizerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.Jovistudio.JvSpeechRecognizerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9804899F1EA7A5D800FF4A39 /* Build configuration list for PBXProject "JvSpeechRecognizerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				980489B41EA7A5D900FF4A39 /* Debug */,
+				980489B51EA7A5D900FF4A39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		980489B61EA7A5D900FF4A39 /* Build configuration list for PBXNativeTarget "JvSpeechRecognizerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				980489B71EA7A5D900FF4A39 /* Debug */,
+				980489B81EA7A5D900FF4A39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9804899C1EA7A5D800FF4A39 /* Project object */;
+}
