@@ -45,4 +45,4 @@ open func cancel()
 
 ### See more details in the Demo project
 
-![](https://github.com/ijovi23/JvSpeechRecognizer/blob/master/Resources/demoScreenshot01.PNG)
+![](https://github.com/ijovi23/JvSpeechRecognizer/raw/master/Resources/demoScreenshot01.PNG)
