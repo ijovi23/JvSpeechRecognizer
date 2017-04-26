@@ -100,10 +100,12 @@ open class JvSpeechRecognizer: NSObject {
         _requestPermission(response)
     }
     
+    @discardableResult
     open func startSpeaking() -> JvSpeechRecognizerStartResult {
         return _startSpeaking()
     }
     
+    @discardableResult
     open func startSpeaking(delegate del: JvSpeechRecognizerDelegate) -> JvSpeechRecognizerStartResult {
         delegate = del
         return _startSpeaking()
@@ -140,6 +142,7 @@ open class JvSpeechRecognizer: NSObject {
         }
     }
     
+    @discardableResult
     private func _startSpeaking() -> JvSpeechRecognizerStartResult {
         
         guard microphonePermitted && speechRecognitionPermitted else {
