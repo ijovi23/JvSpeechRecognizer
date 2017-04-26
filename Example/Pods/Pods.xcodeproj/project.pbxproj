@@ -34,7 +34,7 @@
 		04BEB54A25B30234E0C1BADA598EFE60 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12456B619CD0DE1F31965CAD1749D3D3 /* Pods-JvSpeechRecognizer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JvSpeechRecognizer_Example-frameworks.sh"; sourceTree = "<group>"; };
 		15669562768E911A6A723DB9DF80472D /* Pods-JvSpeechRecognizer_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JvSpeechRecognizer_Example-umbrella.h"; sourceTree = "<group>"; };
-		1639FB0A09A8D3CC8003ADC3F9BCAFC1 /* JvSpeechRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JvSpeechRecognizer.framework; path = JvSpeechRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1639FB0A09A8D3CC8003ADC3F9BCAFC1 /* JvSpeechRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JvSpeechRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		199F10D0908F898A8B2DD910C918CACF /* Pods-JvSpeechRecognizer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JvSpeechRecognizer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		1A92345AF4457FB9707E8F65DC892F46 /* Pods-JvSpeechRecognizer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JvSpeechRecognizer_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1DC424C14BBAF297B423BA16DE863892 /* Pods-JvSpeechRecognizer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JvSpeechRecognizer_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		32D846B9BE100A388649DF3E490A96D3 /* JvSpeechRecognizer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JvSpeechRecognizer-umbrella.h"; sourceTree = "<group>"; };
 		3657404004E232F8E7865A79631DA35B /* JvSpeechRecognizer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JvSpeechRecognizer-dummy.m"; sourceTree = "<group>"; };
 		3AB1699AD24D29FD0C6A2E81D67AC16B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4732DA99238E04AB13B79509519AD9EF /* Pods_JvSpeechRecognizer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JvSpeechRecognizer_Example.framework; path = "Pods-JvSpeechRecognizer_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4732DA99238E04AB13B79509519AD9EF /* Pods_JvSpeechRecognizer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JvSpeechRecognizer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		493CBCA2B8AC697EC27B91D43EB47988 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A379EFDBAFD961A62C9526CF7187C9 /* Pods-JvSpeechRecognizer_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JvSpeechRecognizer_Example-resources.sh"; sourceTree = "<group>"; };
 		69303ED9F9110CA7CE9F4FB6EA68F13E /* Pods-JvSpeechRecognizer_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JvSpeechRecognizer_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -53,16 +53,16 @@
 		75A3E7A61CF5ABBEA7FB29B7F0B6299A /* Pods-JvSpeechRecognizer_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JvSpeechRecognizer_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		7A61BB14163BA4EC288B5E2D58A3502C /* Pods-JvSpeechRecognizer_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JvSpeechRecognizer_Tests-resources.sh"; sourceTree = "<group>"; };
 		85B3B3DD0357C5630B768F09414B8D3F /* Pods-JvSpeechRecognizer_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JvSpeechRecognizer_Example-dummy.m"; sourceTree = "<group>"; };
-		86E3378E70033C1513D641C96DD4C9E0 /* Pods_JvSpeechRecognizer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JvSpeechRecognizer_Tests.framework; path = "Pods-JvSpeechRecognizer_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D4537CB8CF7321E65B164A4BF659EB1 /* Pods-JvSpeechRecognizer_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-JvSpeechRecognizer_Tests.modulemap"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		86E3378E70033C1513D641C96DD4C9E0 /* Pods_JvSpeechRecognizer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JvSpeechRecognizer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D4537CB8CF7321E65B164A4BF659EB1 /* Pods-JvSpeechRecognizer_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JvSpeechRecognizer_Tests.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B4BF7E11F936C2BAACDFB8B92FB605A2 /* Pods-JvSpeechRecognizer_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JvSpeechRecognizer_Tests-umbrella.h"; sourceTree = "<group>"; };
 		C16E2DBAB3B5208259796FD39C64F949 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		C3689DD3464B4D0E48AD11AF26CB8CC2 /* Pods-JvSpeechRecognizer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JvSpeechRecognizer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C63BDF2FF4DFDEC3C7ECE02A09091514 /* Pods-JvSpeechRecognizer_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JvSpeechRecognizer_Tests-dummy.m"; sourceTree = "<group>"; };
 		E1864784213BEC987B2DB73ACDB7F069 /* JvSpeechRecognizer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JvSpeechRecognizer.xcconfig; sourceTree = "<group>"; };
-		E2D4C7AE1A592DB5329A0211BCB0394E /* JvSpeechRecognizer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JvSpeechRecognizer.modulemap; sourceTree = "<group>"; };
-		EC5B2CC95054C815444C96BDC0BDF4F2 /* Pods-JvSpeechRecognizer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-JvSpeechRecognizer_Example.modulemap"; sourceTree = "<group>"; };
+		E2D4C7AE1A592DB5329A0211BCB0394E /* JvSpeechRecognizer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JvSpeechRecognizer.modulemap; sourceTree = "<group>"; };
+		EC5B2CC95054C815444C96BDC0BDF4F2 /* Pods-JvSpeechRecognizer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JvSpeechRecognizer_Example.modulemap"; sourceTree = "<group>"; };
 		FA9D3BECABBAD664E5CFAD4BFAADD86A /* Pods-JvSpeechRecognizer_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JvSpeechRecognizer_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +117,6 @@
 			children = (
 				FB4BE4D732900EA440E42AA36CE0695D /* Classes */,
 			);
-			name = JvSpeechRecognizer;
 			path = JvSpeechRecognizer;
 			sourceTree = "<group>";
 		};
@@ -224,7 +223,6 @@
 			children = (
 				2D156CA123405F493A57094EA0B40BC9 /* JvSpeechRecognizer.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};

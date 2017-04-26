@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-import JvSpeechRecognizer
+//import JvSpeechRecognizer
 
 class Tests: XCTestCase {
     

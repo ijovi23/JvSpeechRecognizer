@@ -8,8 +8,8 @@
 
 import Speech
 
-public enum JvSpeechRecognizerStartResult: Int {
-    case success
+@objc public enum JvSpeechRecognizerStartResult: Int {
+    case success = 0
     case busy
     case noPermission
     case recognizerUnavailable
@@ -17,13 +17,13 @@ public enum JvSpeechRecognizerStartResult: Int {
     case otherError
 }
 
-public enum JvSpeechRecognizerStatus {
+@objc public enum JvSpeechRecognizerStatus: Int {
     case idle
     case listening
     case recognizing
 }
 
-@objc public protocol JvSpeechRecognizerDelegate : NSObjectProtocol {
+@objc public protocol JvSpeechRecognizerDelegate: NSObjectProtocol {
     
     @available(iOS 10.0, *)
     @objc optional func jvSpeechRecognizer(_ recognizer: JvSpeechRecognizer, didRecognizePartialResult partialResult: String)
@@ -39,7 +39,7 @@ public enum JvSpeechRecognizerStatus {
 }
 
 @available(iOS 10.0, *)
-open class JvSpeechRecognizer: NSObject, SFSpeechRecognitionTaskDelegate {
+open class JvSpeechRecognizer: NSObject {
     
     //Public Properties
     
@@ -68,6 +68,7 @@ open class JvSpeechRecognizer: NSObject, SFSpeechRecognitionTaskDelegate {
     //Private Properties
     
     private var sfRecognizer: SFSpeechRecognizer?
+    private var sfRecognizerDelegate: JvSpeechRecognizer_nativeRecognizerDelegate
     private var sfRecognitionTask: SFSpeechRecognitionTask?
     private var sfAudioRecognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var avAudioEngine: AVAudioEngine?
@@ -85,7 +86,13 @@ open class JvSpeechRecognizer: NSObject, SFSpeechRecognitionTaskDelegate {
         } else {
             sfRecognizer = SFSpeechRecognizer()
         }
+        sfRecognizerDelegate = JvSpeechRecognizer_nativeRecognizerDelegate()
+        
+        super.init()
+        
+        sfRecognizerDelegate.ownerRecognizer = self
     }
+    
     
     //Open Func
     
@@ -157,7 +164,7 @@ open class JvSpeechRecognizer: NSObject, SFSpeechRecognitionTaskDelegate {
                 try avAudioSession.setMode(AVAudioSessionModeMeasurement)
                 try avAudioSession.setActive(true, with: .notifyOthersOnDeactivation)
             } catch {
-                debugPrint("AudioSession setup failed: \(error.localizedDescription)")
+                printIfNeeded("AudioSession setup failed: \(error.localizedDescription)")
                 return .otherError
             }
         }
@@ -166,18 +173,18 @@ open class JvSpeechRecognizer: NSObject, SFSpeechRecognitionTaskDelegate {
         guard let avAudioEngine = avAudioEngine else { return .otherError }
         
         guard let inputNode = avAudioEngine.inputNode else {
-            debugPrint("Cannot perform input with current hardware/AVAudioSesssionCategory.")
+            printIfNeeded("Cannot perform input with current hardware/AVAudioSesssionCategory.")
             return .audioEngineNoInputNode
         }
         
         sfAudioRecognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         guard let sfAudioRecognitionRequest = sfAudioRecognitionRequest else {
-            debugPrint("Failed to create the instance of SFSpeechAudioBufferRecognitionRequest")
+            printIfNeeded("Failed to create the instance of SFSpeechAudioBufferRecognitionRequest")
             return .otherError
         }
         
         sfAudioRecognitionRequest.shouldReportPartialResults = reportPartialResults
-        sfRecognitionTask = sfRecognizer.recognitionTask(with: sfAudioRecognitionRequest, delegate: self)
+        sfRecognitionTask = sfRecognizer.recognitionTask(with: sfAudioRecognitionRequest, delegate: sfRecognizerDelegate)
         
         let recordingFormat = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 8192, format: recordingFormat) { (buffer, when) in
@@ -189,7 +196,7 @@ open class JvSpeechRecognizer: NSObject, SFSpeechRecognitionTaskDelegate {
         do {
             try avAudioEngine.start()
         } catch {
-            debugPrint("AudioEngine failed to start: \(error.localizedDescription)")
+            printIfNeeded("AudioEngine failed to start: \(error.localizedDescription)")
             return .otherError
         }
         
@@ -231,61 +238,71 @@ open class JvSpeechRecognizer: NSObject, SFSpeechRecognitionTaskDelegate {
         status = .idle
     }
     
-    private func debugPrint(_ content: String) {
+    fileprivate func printIfNeeded(_ content: String) {
         if needsDebugLog {
             print(content)
         }
     }
     
-    /// SFSpeechRecognitionTaskDelegate
+    fileprivate func setStatus(_ newStatus: JvSpeechRecognizerStatus) {
+        status = newStatus
+    }
+    
+}
+
+@available(iOS 10.0, *)
+private class JvSpeechRecognizer_nativeRecognizerDelegate: NSObject, SFSpeechRecognitionTaskDelegate {
+    
+    weak public var ownerRecognizer: JvSpeechRecognizer?
     
     public func speechRecognitionDidDetectSpeech(_ task: SFSpeechRecognitionTask) {
-        debugPrint("speechRecognitionDidDetectSpeech")
+        ownerRecognizer?.printIfNeeded("speechRecognitionDidDetectSpeech")
     }
     
     public func speechRecognitionTask(_ task: SFSpeechRecognitionTask, didHypothesizeTranscription transcription: SFTranscription) {
-        debugPrint("speechRecognitionTaskDidHypothesizeTranscription")
+        ownerRecognizer?.printIfNeeded("speechRecognitionTaskDidHypothesizeTranscription")
         let result = transcription.formattedString
         
         OperationQueue.main.addOperation {
-            self.delegate?.jvSpeechRecognizer?(self, didRecognizePartialResult: result)
+            self.ownerRecognizer?.delegate?.jvSpeechRecognizer?(self.ownerRecognizer!, didRecognizePartialResult: result)
         }
     }
     
     public func speechRecognitionTask(_ task: SFSpeechRecognitionTask, didFinishRecognition recognitionResult: SFSpeechRecognitionResult) {
-        debugPrint("speechRecognitionTaskDidFinishRecognition")
+        ownerRecognizer?.printIfNeeded("speechRecognitionTaskDidFinishRecognition")
         let bestResult = recognitionResult.bestTranscription.formattedString
         let results = recognitionResult.transcriptions.map({$0.formattedString})
         
         OperationQueue.main.addOperation {
-            self.delegate?.jvSpeechRecognizer?(self, didRecognizeFinalResult: bestResult, allResults: results)
+            self.ownerRecognizer?.delegate?.jvSpeechRecognizer?(self.ownerRecognizer!, didRecognizeFinalResult: bestResult, allResults: results)
         }
     }
     
     public func speechRecognitionTaskFinishedReadingAudio(_ task: SFSpeechRecognitionTask) {
-        debugPrint("speechRecognitionTaskFinishedReadingAudio")
-        status = .recognizing
+        ownerRecognizer?.printIfNeeded("speechRecognitionTaskFinishedReadingAudio")
+        self.ownerRecognizer?.setStatus(.recognizing)
     }
     
     public func speechRecognitionTaskWasCancelled(_ task: SFSpeechRecognitionTask) {
-        debugPrint("speechRecognitionTaskWasCancelled")
-        status = .idle
+        ownerRecognizer?.printIfNeeded("speechRecognitionTaskWasCancelled")
+        self.ownerRecognizer?.setStatus(.idle)
         
         OperationQueue.main.addOperation {
-            self.delegate?.jvSpeechRecognizerWasCancelled?(self)
+            self.ownerRecognizer?.delegate?.jvSpeechRecognizerWasCancelled?(self.ownerRecognizer!)
         }
     }
     
     public func speechRecognitionTask(_ task: SFSpeechRecognitionTask, didFinishSuccessfully successfully: Bool) {
         if successfully {
-            debugPrint("speechRecognitionTaskDidFinishSuccessfully")
+            ownerRecognizer?.printIfNeeded("speechRecognitionTaskDidFinishSuccessfully")
         } else {
-            debugPrint("speechRecognitionTaskDidFinishUnsuccessfully: \(task.error?.localizedDescription ?? "Unknown error")")
+            ownerRecognizer?.printIfNeeded("speechRecognitionTaskDidFinishUnsuccessfully: \(task.error?.localizedDescription ?? "Unknown error")")
         }
-        status = .idle
+        self.ownerRecognizer?.setStatus(.idle)
         
         OperationQueue.main.addOperation {
-            self.delegate?.jvSpeechRecognizer?(self, didFinishWithError: task.error)
+            self.ownerRecognizer?.delegate?.jvSpeechRecognizer?(self.ownerRecognizer!, didFinishWithError: task.error)
         }
     }
+    
 }
