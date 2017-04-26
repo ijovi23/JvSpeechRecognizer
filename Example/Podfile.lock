@@ -1,5 +1,5 @@
 PODS:
-  - JvSpeechRecognizer (0.1.0)
+  - JvSpeechRecognizer (1.0.0)
 
 DEPENDENCIES:
   - JvSpeechRecognizer (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  JvSpeechRecognizer: cc0592b9a401d06cc11fc318d1099dd2565ea528
+  JvSpeechRecognizer: 7baed815011017d51b28e5c464c0f06dde549b4e
 
 PODFILE CHECKSUM: efa1752303fc57edfd17c2f25d82d3ac87f76c5f
 

@@ -1,8 +1,8 @@
 {
   "name": "JvSpeechRecognizer",
-  "version": "0.1.0",
-  "summary": "A short description of JvSpeechRecognizer.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "1.0.0",
+  "summary": "An encapsulation of SFSpeechRecognizer.",
+  "description": "It is an encapsulation of SFSpeechRecognizer. With it you can use the iOS native speech recognition function in an easier way.",
   "homepage": "https://github.com/ijovi23/JvSpeechRecognizer",
   "license": {
     "type": "MIT",
@@ -13,10 +13,11 @@
   },
   "source": {
     "git": "https://github.com/ijovi23/JvSpeechRecognizer.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "JvSpeechRecognizer/Classes/**/*"
+  "source_files": "JvSpeechRecognizer/Classes/**/*",
+  "frameworks": "Speech"
 }
