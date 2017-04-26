@@ -1,0 +1,22 @@
+{
+  "name": "JvSpeechRecognizer",
+  "version": "0.1.0",
+  "summary": "A short description of JvSpeechRecognizer.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/ijovi23/JvSpeechRecognizer",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "ijovi23": "ijovi23@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/ijovi23/JvSpeechRecognizer.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "JvSpeechRecognizer/Classes/**/*"
+}

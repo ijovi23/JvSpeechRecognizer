@@ -1,0 +1,6 @@
+framework module JvSpeechRecognizer {
+  umbrella header "JvSpeechRecognizer-umbrella.h"
+
+  export *
+  module * { export * }
+}

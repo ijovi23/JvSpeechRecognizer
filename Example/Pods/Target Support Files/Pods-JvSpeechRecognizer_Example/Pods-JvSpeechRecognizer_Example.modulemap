@@ -1,0 +1,6 @@
+framework module Pods_JvSpeechRecognizer_Example {
+  umbrella header "Pods-JvSpeechRecognizer_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

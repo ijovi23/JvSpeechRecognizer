@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'JvSpeechRecognizer_Example' do
+  pod 'JvSpeechRecognizer', :path => '../'
+
+  target 'JvSpeechRecognizer_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

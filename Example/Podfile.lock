@@ -1,0 +1,16 @@
+PODS:
+  - JvSpeechRecognizer (0.1.0)
+
+DEPENDENCIES:
+  - JvSpeechRecognizer (from `../`)
+
+EXTERNAL SOURCES:
+  JvSpeechRecognizer:
+    :path: ../
+
+SPEC CHECKSUMS:
+  JvSpeechRecognizer: cc0592b9a401d06cc11fc318d1099dd2565ea528
+
+PODFILE CHECKSUM: efa1752303fc57edfd17c2f25d82d3ac87f76c5f
+
+COCOAPODS: 1.2.0
