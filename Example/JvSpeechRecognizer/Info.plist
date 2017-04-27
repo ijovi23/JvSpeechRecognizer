@@ -25,9 +25,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMicrophoneUsageDescription</key>
-	<string></string>
+	<string>Permit microphone usage?</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string></string>
+	<string>Permit speech recognition usage?</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

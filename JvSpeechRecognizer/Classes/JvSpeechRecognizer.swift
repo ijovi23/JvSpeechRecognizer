@@ -43,25 +43,44 @@ open class JvSpeechRecognizer: NSObject {
     
     //Public Properties
     
+    /// The delegate to receive events from the recognizer.
     weak open var delegate: JvSpeechRecognizerDelegate?
     
+    /// The currnt status.
     open private(set) var status: JvSpeechRecognizerStatus = .idle
     
+    /// If you want to control AVAudioSession by yourself, set this property to false.
+    /// Default is true.
     open var audioSessionControlEnabled = true
     
+    /// If true, partial (non-final) results for each utterance will be reported.
+    /// Default is true.
     open var reportPartialResults = true
     
+    /// Whether the debug log will be printed.
+    /// Default is false.
     open var needsDebugLog = false
     
+    /// Whether the user permitted microphone usage for this app.
     public var microphonePermitted: Bool {
         get {
             return (avAudioSession.recordPermission() == .granted)
         }
     }
     
+    /// Whether the user permitted speech recognition usage for this app.
     public var speechRecognitionPermitted: Bool {
         get {
             return (SFSpeechRecognizer.authorizationStatus() == .authorized)
+        }
+    }
+    
+    /// Whether the speech recognizer is available.
+    /// It might be unavailable for reasons like locale, network, etc.
+    public var isAvailable: Bool {
+        get {
+            return (microphonePermitted && speechRecognitionPermitted)
+                && ((sfRecognizer != nil) && sfRecognizer!.isAvailable)
         }
     }
     
@@ -78,8 +97,7 @@ open class JvSpeechRecognizer: NSObject {
         }
     }
     
-    //Init
-    
+    /// Init with a locale identifier such as "en-US".
     public init?(localeId: String?) {
         if localeId != nil {
             sfRecognizer = SFSpeechRecognizer(locale: Locale(identifier: localeId!))
@@ -96,25 +114,34 @@ open class JvSpeechRecognizer: NSObject {
     
     //Open Func
     
+    /// Call this method to request the nesessary permissions for speech recognition.(asynchronous)
+    /// Some system privacy alerts may show during this time.
     open func requestPermission(_ response: @escaping (Bool) -> Void) {
         _requestPermission(response)
     }
     
+    /// Call this method to start recording and recognizing.
+    /// The start result will return when it starts successfully or an error occurs.
     @discardableResult
     open func startSpeaking() -> JvSpeechRecognizerStartResult {
         return _startSpeaking()
     }
     
+    /// Call this method to indicates a new delegate, start recording and recognizing.
+    /// The start result will return when it starts successfully or an error occurs.
     @discardableResult
     open func startSpeaking(delegate del: JvSpeechRecognizerDelegate) -> JvSpeechRecognizerStartResult {
         delegate = del
         return _startSpeaking()
     }
     
+    /// Call this method to stop recording.
+    /// Recognizer would be still working until the final recognition result is reported.
     open func stopSpeaking() {
         _stopSpeaking()
     }
     
+    /// Call this method to stop recording, recognizing.
     open func cancel() {
         _cancel()
     }

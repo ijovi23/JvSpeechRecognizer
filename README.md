@@ -33,6 +33,13 @@ Add all files in the directory **JvSpeechRecognizer** to your project.
 
 ## Usage
 
+### Privacy
+
+Add the following keys to `Info.plist`
+
+`NSMicrophoneUsageDescription`
+`NSSpeechRecognitionUsageDescription`
+
 ### Create & Init
 ```swift
 let recognizer = JvSpeechRecognizer(localeId: "en-US")

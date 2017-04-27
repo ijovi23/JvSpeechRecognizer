@@ -32,6 +32,15 @@ class ViewController: UIViewController, JvSpeechRecognizerDelegate {
         recognizer?.needsDebugLog = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        OperationQueue().addOperation {
+            self.recognizer?.requestPermission({ (permitted) in
+                print("request permission result: \(permitted)")
+            })
+        }
+    }
+    
     func updateResultTextView() {
         resultTextView.text = "\(unconfirmedResult ?? "") \(confirmedResult ?? "")"
     }
@@ -48,13 +57,6 @@ class ViewController: UIViewController, JvSpeechRecognizerDelegate {
             btnStartSpeaking.isEnabled = false
             btnStopSpeaking.isEnabled = true
             btnCancelRecognition.isEnabled = true
-        case .noPermission:
-            recognizer.requestPermission({ (permitted) in
-                print("request permission result: \(permitted)")
-                if permitted {
-                    self.btnStartSpeakingPressed()
-                }
-            })
         default:
             print(startResult)
         }
