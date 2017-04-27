@@ -2,7 +2,7 @@
 An encapsulation of SFSpeechRecognizer. Just did some potty work └□·□┘
 
 [![CI Status](http://img.shields.io/travis/ijovi23/JvSpeechRecognizer.svg?style=flat)](https://travis-ci.org/ijovi23/JvSpeechRecognizer)
-[![Version](https://img.shields.io/badge/pod-v1.0.0-brightgreen.svg?style=flat)](http://cocoapods.org/pods/JvSpeechRecognizer)
+[![Version](https://img.shields.io/badge/pod-v1.0.2-brightgreen.svg?style=flat)](http://cocoapods.org/pods/JvSpeechRecognizer)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://cocoapods.org/pods/JvSpeechRecognizer)
 [![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg?style=flat)](http://cocoapods.org/pods/JvSpeechRecognizer)
 
