@@ -57,6 +57,10 @@ open class JvSpeechRecognizer: NSObject {
     /// Default is true.
     open var reportPartialResults = true
     
+    /// If true, punctuations will be added to the results.
+    /// Default is true.
+    var needsPunctuation = true
+    
     /// Whether the debug log will be printed.
     /// Default is false.
     open var needsDebugLog = false
@@ -291,8 +295,11 @@ private class JvSpeechRecognizer_nativeRecognizerDelegate: NSObject, SFSpeechRec
     
     public func speechRecognitionTask(_ task: SFSpeechRecognitionTask, didHypothesizeTranscription transcription: SFTranscription) {
         ownerRecognizer?.printIfNeeded("speechRecognitionTaskDidHypothesizeTranscription")
-        let result = transcription.formattedString
         
+        let result = (ownerRecognizer!.needsPunctuation) ? resultByAddingPunctuation(forTranscription: transcription, isFinal: false) : transcription.formattedString
+        /*transcription.segments.forEach { (segment) in
+            print("\(segment.timestamp)|\(segment.duration)|\(segment.substring)|(\(segment.substringRange.location),\(segment.substringRange.length))")
+        } //test*/
         OperationQueue.main.addOperation {
             self.ownerRecognizer?.delegate?.jvSpeechRecognizer?(self.ownerRecognizer!, didRecognizePartialResult: result)
         }
@@ -300,9 +307,11 @@ private class JvSpeechRecognizer_nativeRecognizerDelegate: NSObject, SFSpeechRec
     
     public func speechRecognitionTask(_ task: SFSpeechRecognitionTask, didFinishRecognition recognitionResult: SFSpeechRecognitionResult) {
         ownerRecognizer?.printIfNeeded("speechRecognitionTaskDidFinishRecognition")
-        let bestResult = recognitionResult.bestTranscription.formattedString
+        let bestResult = (ownerRecognizer!.needsPunctuation) ? resultByAddingPunctuation(forTranscription: recognitionResult.bestTranscription, isFinal: true) : recognitionResult.bestTranscription.formattedString
         let results = recognitionResult.transcriptions.map({$0.formattedString})
-        
+        /*recognitionResult.bestTranscription.segments.forEach { (segment) in
+            print("\(segment.timestamp)|\(segment.duration)|\(segment.substring)|(\(segment.substringRange.location),\(segment.substringRange.length))")
+        } //test*/
         OperationQueue.main.addOperation {
             self.ownerRecognizer?.delegate?.jvSpeechRecognizer?(self.ownerRecognizer!, didRecognizeFinalResult: bestResult, allResults: results)
         }
@@ -333,6 +342,24 @@ private class JvSpeechRecognizer_nativeRecognizerDelegate: NSObject, SFSpeechRec
         OperationQueue.main.addOperation {
             self.ownerRecognizer?.delegate?.jvSpeechRecognizer?(self.ownerRecognizer!, didFinishWithError: task.error)
         }
+    }
+    
+    
+    public func resultByAddingPunctuation(forTranscription transcription: SFTranscription, isFinal: Bool) -> String {
+        let ret: String = transcription.segments.reduce("") {
+            var punc = ""
+            if isEnd($1) {
+                punc = (isFinal && $1 == transcription.segments.last) ? "." : ","
+            }
+            return $0 + $1.substring + punc + " "
+        }
+        return ret
+    }
+    
+    func isEnd(_ segment: SFTranscriptionSegment) -> Bool {
+        let length = segment.substringRange.length
+        let boundaryDuration :TimeInterval = Double(length) * 0.11 + 0.8
+        return segment.duration > boundaryDuration
     }
     
 }
